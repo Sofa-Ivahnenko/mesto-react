@@ -4,8 +4,6 @@ import api from '../utils/api.js';
 
 function Main({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) {
 
-  // console.log(onEditProfile);
-
   const [userName, setUserName] = useState("")
 	const [userDescription, setUserDescription] = useState("")
 	const [userAvatar, setUserAvatar] = useState("")
@@ -24,14 +22,7 @@ function Main({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) {
 		api
 			.getCardsList()
 			.then((cardsData) => {
-				getCardsList(
-					cardsData.map((data) => ({
-						likes: data.likes,
-						name: data.name,
-						link: data.link,
-						cardId: data._id,
-					}))
-				)
+				getCardsList(cardsData)
 			})
 			.catch((error) => console.log(`Ошибка: ${error}`))
 	}, [])
@@ -52,9 +43,10 @@ function Main({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) {
         </section>
             <ul className="cards">
             {
-              cards.map((card) => (
-                <Card key={card.cardId} likes={card.likes} name={card.name} link={card.link} onCardClick={onCardClick} />
-              ))}
+              cards.map((card) => { 
+                return (
+                <Card card={card} key={card._id} likes={card.likes} name={card.name} link={card.link} onCardClick={onCardClick} />
+              )})}
             </ul>
     </main>
     );
