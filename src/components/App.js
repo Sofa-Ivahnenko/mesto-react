@@ -59,34 +59,26 @@ function App() {
               buttonText="Сохранить"
               isOpen={isEditProfilePopupOpen}
               onClose={closeAllPopups}>
-              <>
                <label className="popup__form">
                   <input
                     id = "person"
                     name ="user"
                     type="text"
                     className=" popup__input popup__input_type_name"
-                    placeholder="Имя"
-                    value="Жак-Ив Кусто"   
-                    minlength="2"
-                    maxlength="40"
+                    placeholder="Имя"  
                     required/>
                   <span className="person-error popup__error"></span>
-                  </label>
-                  <label className="popup__form">
+                </label>
+                <label className="popup__form">
                     <input
                       id = "about"
                       name="job"
                       type="text"
                       placeholder="О себе"
                       className="popup__input popup__input_type_composition"
-                      value="Исследователь океана"
-                      minlength="2"
-                      maxlength="200"
                       required/>
                     <span className="about-error popup__error "></span>
-                    </label>
-              </>
+                  </label>
               </PopupWithForm>
               <PopupWithForm
                 name="Card"
@@ -94,19 +86,15 @@ function App() {
                 buttonText="Создать"
                 isOpen={isAddPlacePopupOpen}
                 onClose={closeAllPopups}>
-                <>
-                <label className="popup__form">
-                  <input
-                    id = "name"
-                    name = "name"
-                    type="text"
-                    className=" popup__input popup__input_type_card-name"
-                    placeholder="Название"
-                    value=""
-                    required
-                    minlength="2"
-                    maxlength="30" />
-                  <span className="name-error popup__error"></span>
+                  <label className="popup__form">
+                    <input
+                      id = "name"
+                      name = "name"
+                      type="text"
+                      className=" popup__input popup__input_type_card-name"
+                      placeholder="Название"
+                      required />
+                     <span className="name-error popup__error"></span>
                   </label>
                   <label className="popup__form">
                     <input
@@ -114,12 +102,10 @@ function App() {
                       name="link"
                       type="url"
                       placeholder="Ссылка на картинку"
-                      value=""
                       className="popup__input popup__input_type_link"
                       required />
-                  <span className="link-error popup__error"></span>
+                    <span className="link-error popup__error"></span>
                   </label>
-                </>
               </PopupWithForm>
 
               <PopupWithForm
@@ -128,7 +114,6 @@ function App() {
                 isOpen={isDeleteCardPopupOpen}
                 onClose={closeAllPopups}
                 buttonText="Да">
-              <></>
               </PopupWithForm>
 
 				      <PopupWithForm
@@ -137,18 +122,16 @@ function App() {
                 buttonText="Сохранить"
                 isOpen={isEditAvatarPopupOpen}
                 onClose={closeAllPopups}>
-                <>
-                <label class="popup__form">
-                <input
-                  type="url"
-                  name="avatar"
-                  id="avatar"
-                  placeholder="Ссылка на картинку"
-                  className="popup__input popup__input_type_avatar"
-                  required />
-                <span className="avatar-error popup__error"></span>
-                </label>
-               </>
+                  <label className="popup__form">
+                    <input
+                      type="url"
+                      name="avatar"
+                      id="avatar"
+                      placeholder="Ссылка на картинку"
+                      className="popup__input popup__input_type_avatar"
+                      required />
+                    <span className="avatar-error popup__error"></span>
+                  </label>
               </PopupWithForm>
 
               <ImagePopup card={selectedCard} onClose={closeAllPopups} />

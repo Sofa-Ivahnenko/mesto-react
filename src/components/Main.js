@@ -29,24 +29,24 @@ function Main({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) {
 
     return (
         <main>
-        <section className="profile">
-            <img className="profile__avatar" src={userAvatar} alt="аватар" />
-            <button className="profile__avatar-btn" type="button" onClick={onEditAvatar}></button>
-            <div className="profile__info">
-                <div className="profile__text">
-                    <h1 className="profile__title">{userName}</h1>
-                    <button className="profile__button-edit" type="button"  onClick={onEditProfile}></button>
-                </div>
-                <p className="profile__subtitle">{userDescription}</p>
-            </div>
-            <button className="profile__add-button" type="button" onClick={onAddPlace}></button>
-        </section>
+          <section className="profile">
+              <img className="profile__avatar" src={userAvatar} alt="аватар" />
+              <button className="profile__avatar-btn" type="button" onClick={onEditAvatar}></button>
+              <div className="profile__info">
+                  <div className="profile__text">
+                      <h1 className="profile__title">{userName}</h1>
+                      <button className="profile__button-edit" type="button"  onClick={onEditProfile}></button>
+                  </div>
+                  <p className="profile__subtitle">{userDescription}</p>
+              </div>
+              <button className="profile__add-button" type="button" onClick={onAddPlace}></button>
+          </section>
             <ul className="cards">
-            {
-              cards.map((card) => { 
-                return (
-                <Card card={card} key={card._id} likes={card.likes} name={card.name} link={card.link} onCardClick={onCardClick} />
-              )})}
+              {
+                cards.map((card) => { 
+                  return (
+                  <Card card={card} key={card._id} likes={card.likes} name={card.name} link={card.link} onCardClick={onCardClick} />
+                )})}
             </ul>
     </main>
     );
