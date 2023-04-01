@@ -1,5 +1,3 @@
-import React from "react"
-
 function ImagePopup({ card, onClose }) {
 	return (
         <section className={`popup popupView ${card.link ? "popup_opened" : ""}`}>
